@@ -7,12 +7,12 @@
 function quiz_api_menu() {
   
   $items['api/quiz/%'] = array( 
-    'title' => 'quiz',
-    'page callback' => 'quiz_json',
-	'access arguments' => array('access content'), 
-	'page arguments' => array(2),
-	'access callback' => TRUE,
-    'delivery callback' => 'drupal_json_output',
+		'title' => 'quiz',
+		'page callback' => 'quiz_json',
+		'access arguments' => array('access content'), 
+		'page arguments' => array(2),
+		'access callback' => TRUE,
+		'delivery callback' => 'drupal_json_output',
   );
 
   return $items;
