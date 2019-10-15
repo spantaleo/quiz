@@ -7,7 +7,7 @@
 function quiz_api_menu() {
   
   $items['api/quiz/%'] = array( 
-    'title' => 'Import Agenda',
+    'title' => 'quiz',
     'page callback' => 'quiz_json',
 	'access arguments' => array('access content'), 
 	'page arguments' => array(2),

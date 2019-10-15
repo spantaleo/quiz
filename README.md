@@ -12,6 +12,9 @@ pathauto-7.x-1.3
 views-7.x-3.23
 --ctools-7.x-1.15
 
+custom
+--custom/quiz_api
+
 
 Base de datos -> mysql/encuesta.sql
 
