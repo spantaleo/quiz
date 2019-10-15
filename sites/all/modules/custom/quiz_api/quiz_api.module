@@ -25,10 +25,12 @@ function quiz_json($nid) {
 	$data =  new stdClass();
 
 	$quiz = node_load($nid); // $nid contains the node id
+	
 	if(isset($quiz) && $quiz->type == 'quiz' ){
 	
 		$data->title = $quiz->title;
 		$data->nid = $quiz->nid;
+		$data->question = $quiz->field_quiz_question["und"][0]["value"];
 		$data->field_quiz_correct_answer = $quiz->field_quiz_correct_answer["und"][0]["value"];
 		$data->field_quiz_available_answers = $quiz->field_quiz_available_answers["und"];
 		

@@ -10,13 +10,15 @@ $.get('http://localhost/encuesta/api/quiz/2', {})
 		   //console.log(response);
 		   var obj = JSON.parse(response);
            
-		   $("#quiz").html("<p>title: " + obj.title+ '</p>');
+		   $("#quiz").html("<p>Title: " + obj.title+ '</p>');
 		   
+		    $("#quiz").append("<p> Question: " + obj.question+ '</p>');
+			
 		   for(var i=0; i< obj.field_quiz_available_answers.length; i++){
-				$("#quiz").append("<p> available answers: " + obj.field_quiz_available_answers[i].value + '</p>');
+				$("#quiz").append("<p> Available answers: " + obj.field_quiz_available_answers[i].value + '</p>');
 		   }
 		   
-		   $("#quiz").append("<p> correct answer: " + obj.field_quiz_correct_answer+ '</p>');
+		   $("#quiz").append("<p> Correct answer: " + obj.field_quiz_correct_answer+ '</p>');
      });
 
 	
