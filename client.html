@@ -1,0 +1,30 @@
+<html>
+<head>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<script>
+$("#quiz").html("");
+$.get('http://localhost/encuesta/api/quiz/2', {})
+     .done(function(response) {
+		   //console.log(response);
+		   var obj = JSON.parse(response);
+           
+		   $("#quiz").html("<p>title: " + obj.title+ '</p>');
+		   
+		   for(var i=0; i< obj.field_quiz_available_answers.length; i++){
+				$("#quiz").append("<p> available answers: " + obj.field_quiz_available_answers[i].value + '</p>');
+		   }
+		   
+		   $("#quiz").append("<p> correct answer: " + obj.field_quiz_correct_answer+ '</p>');
+     });
+
+	
+</script>
+<body>
+<div class="quiz" id="quiz"></div> 
+
+</body>
+
+
+</html>

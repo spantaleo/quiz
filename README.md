@@ -3,6 +3,7 @@
 Drupal version 7.67
 
 Modulos
+
 wysiwyg-7.x-2.6
 pathauto-7.x-1.3
 --token-7.x-1.7
@@ -11,6 +12,8 @@ pathauto-7.x-1.3
 views-7.x-3.23
 --ctools-7.x-1.15
 
+
+Base de datos -> mysql/encuesta.sql
 
 --Site backend
 http://localhost/encuesta/ 

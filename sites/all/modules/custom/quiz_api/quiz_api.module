@@ -1,0 +1,43 @@
+<?php
+
+
+/**
+ * Implements hook_menu().
+ */
+function quiz_api_menu() {
+  
+  $items['api/quiz/%'] = array( 
+    'title' => 'Import Agenda',
+    'page callback' => 'quiz_json',
+	'access arguments' => array('access content'), 
+	'page arguments' => array(2),
+	'access callback' => TRUE,
+    'delivery callback' => 'drupal_json_output',
+  );
+
+  return $items;
+}
+
+
+
+function quiz_json($nid) {
+
+	$data =  new stdClass();
+
+	$quiz = node_load($nid); // $nid contains the node id
+	if(isset($quiz) && $quiz->type == 'quiz' ){
+	
+		$data->title = $quiz->title;
+		$data->nid = $quiz->nid;
+		$data->field_quiz_correct_answer = $quiz->field_quiz_correct_answer["und"][0]["value"];
+		$data->field_quiz_available_answers = $quiz->field_quiz_available_answers["und"];
+		
+	}	
+	
+	echo drupal_json_encode($data);
+	die();
+	
+}
+
+
+
